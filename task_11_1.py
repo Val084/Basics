@@ -12,6 +12,7 @@ lst = []
 for i in reversed(range(1, factorial(num) + 1)):
     lst.append(factorial(i))
 print(factorial(num))
+
 print(lst)
 
 
