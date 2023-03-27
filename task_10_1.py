@@ -1,4 +1,4 @@
-import json
+
 
 pets = dict()
 name = input("Кличка животного:")
