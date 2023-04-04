@@ -13,28 +13,27 @@ if (n >= 1) and (n <= 100):
             quit()
         weights.append(st)
 
-count = 0  # init counter
-while len(weights) >= 2:  # work while we have at least 2 elements (sailor)
-    # out sailor - index 0, search a pair for him
-    i = 1       # init iterator
-    i_max = 1   # init max element index
-    m_max = -1  # init max element value
-    while i < len(weights):  # search from second until the end
+count = 0
+while len(weights) >= 2:
+
+    i_max = 1
+    m_max = -1
+    while i < len(weights):
         if weights[i] >= m_max and weights[0] + weights[i] < m:
-            # we found new maximum, and our sailor weight and this new maximum less than m
-            i_max = i  # new max index
-            m_max = weights[i]  # new max value
+
+            i_max = i
+            m_max = weights[i]
         i += 1
 
     if m_max != -1:
-        # we found suitable pair element, this guy will not swim along
-        weights.pop(i_max) # remove pair from sailor's list
 
-    weights.pop(0)  # remove our sailor
-    count += 1  # increase boat amounts
+        weights.pop(i_max)
+
+    weights.pop(0)
+    count += 1
 
 if len(weights):
-    count += 1  # 1 guy left - have to give to him another boat
+    count += 1
 
 print("Total boats required count: " + str(count))
 
